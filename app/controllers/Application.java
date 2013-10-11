@@ -25,7 +25,7 @@ public class Application extends Controller {
      * Handle default path requests, redirect to computers list
      */
     public static Result index() {
-        return GO_HOME;
+        return ok( views.html.index.render() )  ;
     }
 
     /**
