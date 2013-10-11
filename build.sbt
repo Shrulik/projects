@@ -1,8 +1,8 @@
 import play.Project._
 
-name := "computer-database-jpa"
+name := "project-proposals"
 
-version := "1.0"
+version := "0.1"
 
 libraryDependencies ++= Seq(
   javaJdbc, 
