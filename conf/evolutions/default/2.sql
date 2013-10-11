@@ -2,6 +2,12 @@
 
 # --- !Ups
 
+
+insert into project (id,name, description, votes) values (  9,'Ninja turtles tribute site','What it sounds like', 0 );
+insert into project (id,name, description, votes) values (  10,'Coffee bags startup','Why should those tea bastards  enjoy progress alone ? ', 0 );
+insert into project (id,name, description, votes) values (  11,'Haskell support event','More people should know about Haskell', 0 );
+
+
 insert into company (id,name) values (  1,'Apple Inc.');
 insert into company (id,name) values (  2,'Thinking Machines');
 insert into company (id,name) values (  3,'RCA');

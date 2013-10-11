@@ -1,5 +1,6 @@
 package controllers;
 
+import play.libs.Json;
 import play.mvc.*;
 import play.data.*;
 import static play.data.Form.*;
@@ -26,6 +27,12 @@ public class Application extends Controller {
      */
     public static Result index() {
         return ok( views.html.index.render() )  ;
+    }
+
+    @Transactional(readOnly=true)
+    public static Result projects(){
+
+        return ok(Json.toJson(Project.findAll()));
     }
 
     /**

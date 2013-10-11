@@ -2,6 +2,14 @@
 
 # --- !Ups
 
+create table project (
+  id                        bigint not null,
+  name                      varchar(255),
+  description               varchar(500),
+  votes                     bigint,
+  constraint pk_project primary key (id))
+;
+
 create table company (
   id                        bigint not null,
   name                      varchar(255),
@@ -18,6 +26,8 @@ create table computer (
 ;
 
 create sequence company_seq start with 1000;
+
+create sequence project_seq start with 1000;
 
 create sequence computer_seq start with 1000;
 
