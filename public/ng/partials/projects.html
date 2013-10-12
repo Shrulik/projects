@@ -1,0 +1,29 @@
+<div class="row">
+
+    <ul class="projectList col-sm-6">
+        <li class="clearfix" ng-repeat="project in projects | orderBy:'-votes'">
+            <div class="project"><span ng-click="toggleDesc(project)">{{project.name}}</span>
+                <span class="pull-left votes">{{project.votes}}
+                    <button ng-click="upVote(project)" type="button" class="btn btn-default btn-lg">
+                        <span class="glyphicon glyphicon-arrow-up"></span>
+                    </button>
+                </span>
+            </div>
+            <div class="projectDescription" ng-show="project.show">{{project.description}}</div>
+
+        </li>
+    </ul>
+
+    <!--TODO : Try out the angularjs i18n solution-->
+    <div class="col-sm-4">
+        <input type="text" ng-model="newProject.name" placeholder="הכנס שם פרויקט"/>
+        <textarea ng-model="newProject.description" placeholder="תיאור הפרויקט"/>
+        <button ng-click='addProject()'>הוסף</button>
+    </div>
+
+    <!--<div class="col-sm-6 gridStyle" ng-grid="gridOptions"></div>-->
+</div>
+<div class="row">
+    <div class='col-sm-8 centered' ng-bind="info" ></div>
+    <!--<textarea class='col-sm-8 centered' name="info" id="" cols="30" ng-bind="info" rows="10"></textarea>-->
+</div>

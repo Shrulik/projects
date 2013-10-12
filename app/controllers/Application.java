@@ -13,7 +13,9 @@ import models.*;
 /**
  * Manage a database of computers
  */
-public class Application extends Controller {
+public class Application extends Controller   {
+
+     private static Form<Project> projectForm = form(Project.class);
     
     /**
      * This result directly redirect to application home.
@@ -21,6 +23,18 @@ public class Application extends Controller {
     public static Result GO_HOME = redirect(
         routes.Application.list(0, "name", "asc", "")
     );
+
+    @Transactional
+    public static Result addProject(){
+        Form<Project> form = projectForm.bindFromRequest();
+        if ( form.hasErrors())
+            return badRequest(form.errorsAsJson());
+
+        Project project = form.get();
+        project.save();
+        return ok(Json.toJson(project));
+
+    }
     
     /**
      * Handle default path requests, redirect to computers list
@@ -33,6 +47,21 @@ public class Application extends Controller {
     public static Result projects(){
 
         return ok(Json.toJson(Project.findAll()));
+    }
+
+    @Transactional()
+    public static Result project(Long id){
+        Form<Project> projectForm = form(Project.class).bindFromRequest();
+
+        if ( !projectForm.hasErrors() ) {
+            Project project = projectForm.get();
+            project.update(id);
+            return ok(Json.toJson(project));
+        }
+        else  {
+            return badRequest(projectForm.errorsAsJson());
+        }
+
     }
 
     /**
@@ -52,7 +81,7 @@ public class Application extends Controller {
             )
         );
     }
-    
+
     /**
      * Display the 'edit form' of a existing Computer.
      *
@@ -67,9 +96,9 @@ public class Application extends Controller {
             editForm.render(id, computerForm)
         );
     }
-    
+
     /**
-     * Handle the 'edit form' submission 
+     * Handle the 'edit form' submission
      *
      * @param id Id of the computer to edit
      */
@@ -83,7 +112,7 @@ public class Application extends Controller {
         flash("success", "Computer " + computerForm.get().name + " has been updated");
         return GO_HOME;
     }
-    
+
     /**
      * Display the 'new computer form'.
      */
@@ -94,9 +123,9 @@ public class Application extends Controller {
             createForm.render(computerForm)
         );
     }
-    
+
     /**
-     * Handle the 'new computer form' submission 
+     * Handle the 'new computer form' submission
      */
     @Transactional
     public static Result save() {
@@ -108,7 +137,7 @@ public class Application extends Controller {
         flash("success", "Computer " + computerForm.get().name + " has been created");
         return GO_HOME;
     }
-    
+
     /**
      * Handle computer deletion
      */
@@ -118,7 +147,7 @@ public class Application extends Controller {
         flash("success", "Computer has been deleted");
         return GO_HOME;
     }
-    
+
 
 }
             
