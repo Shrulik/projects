@@ -1,6 +1,6 @@
 app.controller('ProjectsCtrl',['$scope','$http', function ( $scope, $http ) {
 
-   $scope.gridOptions = { data: 'projects', multiSelect: false };
+  // $scope.gridOptions = { data: 'projects', multiSelect: false };
 
    $scope.toggleDesc = function (project) {
        project.show = !project.show;
