@@ -16,9 +16,17 @@ header, footer {
     height: 300px
 }
 
-
+.projectDescription {
+    font-size: 22px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-right: 50px;
+}
 .projectList {
     background-color: ghostwhite;
+}
+
+.newProject textarea {
+    height: 150px;
 }
 
 .project {
