@@ -6,8 +6,8 @@
 GET         /                    controllers.Application.index()
 
 GET         /project             controllers.Application.projects()
-POST        /project/:id         controllers.Application.project(id: Long)
-PUT         /project             controllers.Application.addProject()
+PUT         /project/:id         controllers.Application.updateProject(id: Long)
+POST        /project             controllers.Application.addProject()
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file        controllers.Assets.at(path="/public", file)

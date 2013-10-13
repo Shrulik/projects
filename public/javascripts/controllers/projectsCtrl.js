@@ -10,7 +10,7 @@ app.controller('ProjectsCtrl',['$scope','$http', function ( $scope, $http ) {
     $scope.addProject = function () {
         $scope.newProject.votes = 0;
 
-        $http.put('/project', $scope.newProject).success(function (project) {
+        $http.post('/project', $scope.newProject).success(function (project) {
             $scope.projects.push(project);
             $scope.newProject = {};
         }).error(function (errors) {
@@ -21,7 +21,7 @@ app.controller('ProjectsCtrl',['$scope','$http', function ( $scope, $http ) {
     }
     $scope.upVote = function (project) {
         project.votes++;
-        $http.post("/project/" + project.id, project).success(function (resp) {
+        $http.put("/project/" + project.id, project).success(function (resp) {
             console.log(resp);
         }).error(function(error){
             console.log(error);
