@@ -2,6 +2,8 @@
 
 title=פרויקטים!
 greeting=ברכות ברכות
-computers.list.title={0,choice,0#No computers|1#One computer|1<{0,number,integer} computers} found
+error.minLength= קצר מידי, צריך לפחות {0} תווים
+error.required=כל בבון בא יומו, אל תחסיר לי דברים עכשיו, אני מזהיר אותך
+
 
 
