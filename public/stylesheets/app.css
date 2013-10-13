@@ -28,6 +28,10 @@ header, footer {
 .newProject textarea {
     height: 150px;
 }
+.info {
+    color: darkred;
+    font-size: 18px;
+}
 
 .project {
     font-size: 22px;

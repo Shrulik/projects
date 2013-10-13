@@ -23,7 +23,8 @@
 
     <!--<div class="col-sm-6 gridStyle" ng-grid="gridOptions"></div>-->
 </div>
-<div class="row">
-    <div class='col-sm-8 centered' ng-bind="info" ></div>
-    <!--<textarea class='col-sm-8 centered' name="info" id="" cols="30" ng-bind="info" rows="10"></textarea>-->
+<div dir="auto"  class="row" >
+    <ul class='info col-sm-8 centered'>
+        <li ng-repeat="(key, message) in messages">{{key}} : {{message}}</li>
+    </ul>
 </div>

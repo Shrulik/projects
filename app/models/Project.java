@@ -1,21 +1,10 @@
 package models;
 
-import play.data.format.Formats;
 import play.data.validation.Constraints;
 import play.db.jpa.JPA;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
-import java.util.Set;
-
-/**
- * Created with IntelliJ IDEA.
- * User: Shmulik
- * Date: 11/10/13
- * Time: 18:05
- * To change this template use File | Settings | File Templates.
- */
 
 @Entity
 @SequenceGenerator(name = "project_seq", sequenceName = "project_seq")
@@ -26,6 +15,7 @@ public class Project {
     public Long id;
 
     @Constraints.Required
+    @Constraints.MinLength(value = 4)
     public String name;
 
     @Constraints.Required
