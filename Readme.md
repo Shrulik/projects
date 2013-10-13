@@ -4,7 +4,7 @@ Readme - What this is about
 This is a simple app I'm creating for my demo lecture on AngularJS and Play framework.
 Since I hate making things with no purpose at all, this is something that might have some limited use.
 
-I'm first going to build it, and then ruin it by commenting out parts vital parts, so that I can
+I'm first going to build it, and then ruin it by commenting out parts, so that I can
 introduce them back in a clear and simple way to demonstrate different capabilities.
 
 The purpose of this app is not to showcase every capability of the aforementioned frameworks,
