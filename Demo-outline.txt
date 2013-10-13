@@ -1,0 +1,65 @@
+#. Play new - this is how you create a new app.
+#. Play run - Show the default app main page, show the @documentation, mention it is a little problematic to access it while in debug or in error mode.
+#. Play eclipse, show how to create a poject, don't bother doing it.
+#. Talk a little about the demo project - Projects is an app which allows you to propose project ideas,
+                and allows other people to vote for them, join them, and even adopt them. We aren't going to complete
+                it, but this is the idea you should have in your head.
+
+#. Show the index() method, explain a little about views. Explain we are ignoring this feature so very little is being said.
+
+#. Move to my project instead of the new one. Start with this, I like to design my app from my public api and out, it isn't the right way, but it is my way.
+   Explain about REST (Representational State Transfer), where the state is of resources. In our project, the resource is projects.
+   Which we can list all instances off, a particular instance and create a new instance.
+   so we will have a route of :
+        a. GET      /project/:id
+        b. GET      /project
+        c. POST     /project/:id
+        d. PUT      /project
+
+   Show that if I fake a method, it doesn't work. Then make a method with TODO.
+   Explain a little about PUT vs. POST argument ?
+
+#. Next, I will create a model. I will just copy it in, and pass over it quickly. JPA.em() should be explained, the rest
+    assumes JPA knowledge. Explain you are free to use whatever technology you want for persistence.
+
+#. Mention the validations, say we will return to them soon.
+
+#. Explain about evolutions, what they are, when they are called. I will then create ( or copy from somewhere 1.sql, 2.sql). Refresh and apply evolutions.
+
+#. Go to controller and implement the project() method, by calling the appropriate method on the model. Explain why this structure has some merits.
+Throw DomainDrivenDesign into the air, maybe it will stick with someone.
+
+#. Now I should access the url in chrome to see JSON is returned.
+
+#. Explain now we will have a section about testing, it isn't ready yet. Take say 7 minutes.
+
+#. Implement the addProject() method, explain about dynamic forms and how they relate to the validations.
+
+#. Fail to add the @Transactional annotation and explain afterwards why it fails. Let play display the error by looking in the network tab in Chrome.
+
+#. Implement the updateProject() method, note the similarity between the update and the add method, compare to difference between POST and PUT (?)
+
+#. ### Dramatic pause, now we move to Angular ####
+
+#. Explain first about where it came from and etc, google bla bla. The future of the web, bla bla. Dependency injection,
+modular, extending HTML.
+
+#. Go to index.scala.html and add the ng-app tag. As well as the angular.js script and the app.js. Explain what it means.
+
+#. Go to app.js and show the first line, which should depend on nothing in initial state.
+
+#. Go back to index.html and show the ng-view tag.
+
+#. Go to app.js and explain what the $routeProvider does. Mention the #, but explain it is not interesting at the moment.
+
+#. Create two simple templates, simple and other simple, and show how you can switch between them with the url.
+
+#. Explain what a controller is, and create a projects.html and create a controller there.
+
+#. Add dependency on $http and call the appropriate server url.
+
+# History api and $locationProvider.html5mode
+
+
+
+* Show how to run in debug mode, and explain difference between ~run and run.
