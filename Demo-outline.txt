@@ -54,9 +54,19 @@ modular, extending HTML.
 
 #. Create two simple templates, simple and other simple, and show how you can switch between them with the url.
 
-#. Explain what a controller is, and create a projects.html and create a controller there.
+#. Move to the part of app.js that links to bindingCtrl.js and explain where the controller comes from and how databinding in AngularJS works.
 
-#. Add dependency on $http and call the appropriate server url.
+#. Move to the actual projects.html I wrote, after appropriate changes to app.js.
+
+#. Add dependency on $http and call the appropriate server url, bind data to scope.
+
+#. Explain how ng-repeat works.
+
+#. Explain I put zero effort into CSS, and show how important it is. Probably a good place to mention bootstrap twitter.
+
+
+#. Mention talking about testing should come next, but it won't, because we have likely already covered too much. Mention it
+is pretty sweet with the DI and mocks and all.
 
 # History api and $locationProvider.html5mode
 
