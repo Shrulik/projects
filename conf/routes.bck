@@ -5,6 +5,10 @@
 # Default path will just redirect to the computer list
 GET         /                    controllers.Application.index()
 
+GET         /project             controllers.Application.projects()
+PUT         /project/:id         controllers.Application.updateProject(id: Long)
+POST        /project             controllers.Application.addProject()
+
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file        controllers.Assets.at(path="/public", file)
 

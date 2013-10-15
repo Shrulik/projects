@@ -1,25 +1,7 @@
-@()
-<!DOCTYPE html>
-<html ng-app="Projects">
-<head>
-    <title>@Messages("title")</title>
+@(message: String)
 
-    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("lib/ng-grid/ng-grid.css")">
-    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("lib/bootstrap-rtl-3.0.0/css/bootstrap-rtl.css")">
-    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/app.css")">
-    <!--<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">-->
-</head>
-<body dir="rtl">
-        <header>@Messages("greeting")</header>
+@main("Welcome to Play") {
 
-        <div class="ng-view"></div>
+    @play20.welcome(message, style = "Java")
 
-       <script type="text/javascript" src="@routes.Assets.at("lib/jQuery/jquery-2.0.3.js")"></script>
-       <script type="text/javascript" src="@routes.Assets.at("lib/angular-1.2.0-rc.2/angular.js")"></script>
-       <script type="text/javascript" src="@routes.Assets.at("lib/angular-1.2.0-rc.2/angular-route.js")"></script>
-       <script type="text/javascript" src="@routes.Assets.at("lib/ng-grid/ng-grid-2.0.7.debug.js")"></script>
-       <script type="text/javascript" src="@routes.Assets.at("javascripts/app.js")"></script>
-       <script type="text/javascript" src="@routes.Assets.at("javascripts/controllers/projectsCtrl.js")"></script>
-       <script type="text/javascript" src="@routes.Assets.at("javascripts/controllers/bindingCtrl.js")"></script>
-</body>
-</html>
+}
