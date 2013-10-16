@@ -55,16 +55,32 @@ Throw DomainDrivenDesign into the air, maybe it will stick with someone.
 
 #. (?) Implement the updateProject() method, note the similarity between the update and the add method, compare to difference between POST and PUT
 
-#. ### Dramatic pause, now we move to Angular ####
+###################################################################################################################################################
+#. ################################ Dramatic pause, now we move to Angular #####################################################
+###################################################################################################################################################
 
 #. Explain first about where it came from and etc, google bla bla. The future of the web, bla bla. Dependency injection,
 modular, extending HTML.
 
-#. Go to index.scala.html and add the ng-app tag. As well as the angular.js script and the app.js. Explain what it means.
+#. We are going to start with a pure Angular example, go to routes and replace with usage of index.html a1
 
-#. Go to app.js and show the first line, which should depend on nothing in initial state.
+#. Create index.html in public, content with a2, show import of angular.js, app.js and explain ngApp, ngController, ngBind
 
-#. Go back to index.html and show the ng-view tag.
+#. Create app.js (a3). Explain angular.module, the controller function.
+
+#. Now we are going to show two way data-binding. a4, a5. Explain ngModel,ngRepeat and filter, as well as the {{}} synatx.
+    Explicitly ignore ngCloak.
+
+#. Now we should use the server a little, use $http. a6
+
+#. Explain how ugly this is, similar to accessing the DB from a server side controller, suffers from very similar issues.
+    Now we have advantages in reuse, testability, terseness and so on. a7
+
+#. Example of what kind of methods could be on the controller, simple behaviour which is view dependant. a8,a9.
+    Actually, explain this is a little bit of a lie, for useful view behaviour, there is the concept of directive which we should use, and
+    it is very critical to angular, but too much to explain in the scope of this lecture. Remember, teaching HTML new tricks.
+
+# ng-view
 
 #. Go to app.js and explain what the $routeProvider does. Mention the #, but explain it is not interesting at the moment.
 
