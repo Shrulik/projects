@@ -1,35 +1,26 @@
-var app = angular.module("Projects", ['ngRoute', 'ngGrid']);
+var app = angular.module("Projects", []);
 
-app.config(['$routeProvider', '$locationProvider',
-    function ($routeProvider, $locationProvider) {
+app.controller('SimpleCtrl', ['$scope', 'Project', function ($scope, Project) {
+
+    $scope.ourTitle = "Projects";
+
+    $scope.toggleDesc = function (project) {
+        project.show = !project.show;
+    }
+
+    $scope.projects = Project.query();
 
 
-//        $routeProvider.when('/simple', {
-//            templateUrl: '/assets/ng/partials/simple.html'
-//        }).when('/other/simple', {
-//                templateUrl: '/assets/ng/partials/otherSimple.html'
-//            }).otherwise({
-//                redirectTo: '/'
-//            });
+}]);
 
-        $routeProvider.when('/simple', {
-            templateUrl: '/assets/ng/partials/simple.html'
-        }).when('/other/simple', {
-                templateUrl: '/assets/ng/partials/otherSimple.html'
-            }).when('/binding', {
-                controller: 'BindingCtrl',
-                templateUrl: '/assets/ng/partials/binding.html'
-            }).otherwise({
-                redirectTo: '/'
+
+app.service('Project', ['$http', function ($http) {
+
+    return {
+        query: function () {
+            return $http.get("/project").then(function (response) {
+                return response.data;
             });
-
-//        $routeProvider.when('/', {
-//            templateUrl: '/assets/ng/partials/projects.html',
-//            controller: 'ProjectsCtrl'
-//        }).otherwise({
-//                redirectTo: '/'
-//            });
-
-//  $locationProvider.html5mode(true);
-    }]);
-
+        }
+    }
+}  ]);
