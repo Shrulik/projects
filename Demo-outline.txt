@@ -77,8 +77,13 @@ modular, extending HTML.
     Now we have advantages in reuse, testability, terseness and so on. a7
 
 #. Example of what kind of methods could be on the controller, simple behaviour which is view dependant. a8,a9.
-    Actually, explain this is a little bit of a lie, for useful view behaviour, there is the concept of directive which we should use, and
-    it is very critical to angular, but too much to explain in the scope of this lecture. Remember, teaching HTML new tricks.
+    Actually, explain this is a lie, while this sort of behavior is possible sometimes, for useful view behaviour,
+    there is the concept of directive which we should use, and it is very critical to angular, but too much to
+    explain in the scope of this lecture. Remember, teaching HTML new tricks.
+
+#.  So what do we always put on a controller ? I'm glad you asked, let's try to add a new project. a10-11
+
+#. Add a section about SPA and routes ?
 
 # ng-view
 

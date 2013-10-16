@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="Projects" ng-controller="SimpleCtrl">
+<head>
+    <title ng-bind="ourTitle"></title>
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }</style>
+</head>
+
+<body ng-cloak>
+
+<input type="text" ng-model="userFilter" placeholder="Filter by ..."/>
+
+<div>
+    <ul >
+        <li ng-repeat="project in projects | filter:userFilter">
+            <div  ng-click="toggleDesc(project)" >{{project.name}}
+            </div>
+            <div dir="auto" ng-show="project.show">{{project.description}}</div>
+        </li>
+    </ul>
+</div>
+<div>
+    <input type="text" ng-model="newProject.name" placeholder="הכנס שם פרויקט"/>
+    <textarea ng-model="newProject.description" placeholder="תיאור הפרויקט">  </textarea>
+    <button ng-click='addProject()'>הוסף</button>
+</div>
+
+<div dir="auto"  >
+    <ul >
+        <li ng-repeat="(key, message) in messages">{{key}} : {{message}}</li>
+    </ul>
+</div>
+
+
+<script type="text/javascript" src="assets/lib/angular-1.2.0-rc.2/angular.js"></script>
+<script type="text/javascript" src="assets/javascripts/app.js"></script>
+</body>
+</html>
