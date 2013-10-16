@@ -39,7 +39,7 @@ public class Project {
     }
 
     /**
-     * Update this computer.
+     * Update this project.
      */
     public void update(Long id) {
         this.id = id;
@@ -47,14 +47,14 @@ public class Project {
     }
 
     /**
-     * Insert this new computer.
+     * Insert this new project.
      */
     public void save() {
         JPA.em().persist(this);
     }
 
     /**
-     * Delete this computer.
+     * Delete this project.
      */
     public void delete() {
         JPA.em().remove(this);
