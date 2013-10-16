@@ -3,8 +3,7 @@
 # ~~~~
 
 # Default path will just redirect to the computer list
-GET         /                    controllers.Application.index()
-
+GET         /                    controllers.Assets.at(path="/public", file="index.html")
 
 GET         /project            controllers.Application.projects()
 PUT         /project/:id        controllers.Application.updateProject(id: Long)
