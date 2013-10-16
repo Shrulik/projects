@@ -1,12 +1,24 @@
 #. Play new - this is how you create a new app.
 #. Play run - Show the default app main page, show the @documentation, mention it is a little problematic to access it while in debug or in error mode.
-#. Play eclipse, show how to create a poject, don't bother doing it.
+#. Play eclipse, open in IntelliJ, possibly explain IntelliJ play plugin is in the Ultimate version, and SBT plugin doesn't work.
+#. Play intro, show a picture of MVC and talk 20 seconds on each part.
+#. Show the routes file, and explain about mapping to the controller. Then go through d1-d6.
+#. Talk a little about REST (Representational State Transfer), where the state is of resources. In our project, the resource is projects.
+    Which we can list all instances off, a particular instance and create a new instance so we will have a route of :
+        a. GET      /project/:id
+        b. GET      /project
+        c. POST     /project/:id
+        d. PUT      /project
 #. Talk a little about the demo project - Projects is an app which allows you to propose project ideas,
                 and allows other people to vote for them, join them, and even adopt them. We aren't going to complete
-                it, but this is the idea you should have in your head.
+                it, but this is the idea you should have in your head. The capabilities we need are Add project, and Edit
 
-#. Show the index() method, explain a little about views. Explain we are ignoring this feature so very little is being said.
-
+#. Talk about features we need, such as :
+        a. Listing existing projects.
+        b. Add a new project.
+        c. Update existing project.
+   Implement routes (d7).
+#. Implement appropriate methods on the Application controller, d8
 #. Move to my project instead of the new one. Start with this, I like to design my app from my public api and out, it isn't the right way, but it is my way.
    Explain about REST (Representational State Transfer), where the state is of resources. In our project, the resource is projects.
    Which we can list all instances off, a particular instance and create a new instance.
@@ -19,25 +31,29 @@
    Show that if I fake a method, it doesn't work. Then make a method with TODO.
    Explain a little about PUT vs. POST argument ?
 
-#. Next, I will create a model. I will just copy it in, and pass over it quickly. JPA.em() should be explained, the rest
-    assumes JPA knowledge. Explain you are free to use whatever technology you want for persistence.
+#. So now what ? Our controller needs to return something. We need a model. Play is Model agnostic, you can return whatever you want from your controllers.
+   We will be using JPA for familiarity, for which play has a plugin. First we need JPA and hibernate. Go to build.scala to show how to add a dependency. d9.
+   Regenerate project files.
 
-#. Mention the validations, say we will return to them soon.
+#. Now the model itself, d10. As mentioned I'm assuming JPA knowledge.
+   Quickly pass over methods and JPA.em() should be explained.
 
-#. Explain about evolutions, what they are, when they are called. I will then create ( or copy from somewhere 1.sql, 2.sql). Refresh and apply evolutions.
+#. (?) Mention the validations, say we will return to them soon.
 
-#. Go to controller and implement the project() method, by calling the appropriate method on the model. Explain why this structure has some merits.
+#. Now, I have created a model, what about a DB ? Play comes prepared with an embedded database called H2, which in default work in memory,
+   but can work in Explain about evolutions, what they are, when they are called. I will then create ( or copy from somewhere 1.sql, 2.sql).
+    Refresh and apply evolutions.
+
+#. Now we have the data, time to connect the data to the view. Go to controller and implement the project() method, by calling the appropriate method on the model. Explain why this structure has some merits.
 Throw DomainDrivenDesign into the air, maybe it will stick with someone.
 
-#. Now I should access the url in chrome to see JSON is returned.
+#. Explain now would be a good time to write unit tests, which play is very compatible with, but we won't have the time.
 
-#. Explain now we will have a section about testing, it isn't ready yet. Take say 7 minutes.
+#. Now I should access the url in chrome to see JSON is returned. Note the transaction error, add a @Transactioanl, try again.
 
-#. Implement the addProject() method, explain about dynamic forms and how they relate to the validations.
+#. Now implement the add/update methods, explain about dynamic forms and how they relate to the validations.
 
-#. Fail to add the @Transactional annotation and explain afterwards why it fails. Let play display the error by looking in the network tab in Chrome.
-
-#. Implement the updateProject() method, note the similarity between the update and the add method, compare to difference between POST and PUT (?)
+#. (?) Implement the updateProject() method, note the similarity between the update and the add method, compare to difference between POST and PUT
 
 #. ### Dramatic pause, now we move to Angular ####
 
