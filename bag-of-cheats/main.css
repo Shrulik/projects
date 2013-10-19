@@ -1,0 +1,97 @@
+
+body {
+    background: whitesmoke;
+}
+header, footer {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 30px;
+    background: #333;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    min-width: 100%;
+}
+
+
+legend {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+textarea {
+    vertical-align: middle;
+    width : 40%;
+    max-width: 400px;
+    height: 5em;
+    margin: 10px 15px;
+}
+.addQuote {
+    text-align: center;
+    width: 80%;
+    max-width: 700px;
+    /*border: gainsboro ridge thick;*/
+    padding: 10px;
+    margin: auto auto 30px;
+}
+
+
+.addQuote button {
+    font-size: 20px;
+}
+
+.addQuote ul {
+    color: red;
+    font-size: 18px;
+}
+
+
+section ul {
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+}
+
+section li {
+    margin-top: 10px;
+    padding: 1px;
+    text-align: center;
+    -moz-border-radius: 15px
+    border-radius: 15px;
+    list-style-type: none;
+}
+
+section li p {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+section li p:first-of-type {
+    font-size: 22px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-right: 50px;
+}
+
+
+section li p:first-of-type:hover {
+    color: whitesmoke;
+    text-shadow: 2px 2px 3px black;
+
+}
+
+section li p:last-of-type:before {
+    content: "- ";
+
+}
+
+ul li {
+    font-size: 22px;
+    background-color: gainsboro;
+}
+
+section input {
+    margin-right: 20px;
+    font-size: 25px;
+    border-radius: 15px;
+}
+
+
